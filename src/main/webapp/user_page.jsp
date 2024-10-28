@@ -111,12 +111,12 @@
             List<String> users = (List<String>) request.getAttribute("users");
             if (users != null && !users.isEmpty()) {
                 for (String user : users) {
-        %>3212131231231231312321321
+        %>
         <li><%= user %></li>
         <form action='UserPage' method='post'>
             <input type='hidden' name='selected_user' value='<%= user %>'>
             <button type='submit'>Написать</button>
-        </form>
+        </form>123123213
         <%
                 }
             }
