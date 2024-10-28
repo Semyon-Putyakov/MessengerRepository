@@ -116,7 +116,7 @@
         <form action='UserPage' method='post'>
             <input type='hidden' name='selected_user' value='<%= user %>'>
             <button type='submit'>Написать</button>
-        </form>123123213
+        </form>1231232131231231232
         <%
                 }
             }
