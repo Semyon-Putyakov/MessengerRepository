@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -89,6 +90,7 @@ public class Chat extends HttpServlet {
         String userTable = getNameMessengerDB1();
         String companionTable = getNameMessengerDB2();
 
+
         search_chat_query = "SELECT table_name FROM information_schema.tables " +
                 "WHERE table_schema = 'public' AND table_name IN (?, ?)";
 
@@ -129,3 +131,4 @@ public class Chat extends HttpServlet {
         request.getRequestDispatcher("chat.jsp").forward(request, response);
     }
 }
+///// Закрытие ресурсов. Использовать try-with-resources, чтобы автоматически закрывать ресурсы, такие как PreparedStatement и ResultSet, после использования. ?????

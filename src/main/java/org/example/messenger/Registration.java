@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 @WebServlet("/RegistrationPage")
 public class Registration extends HttpServlet {
-    private DBConnection dbConnection; //                      ДОДЕЛАТЬ
+    private DBConnection dbConnection;
     private PreparedStatement ps;
     private ResultSet rs;
     private boolean error_user_bool = false;

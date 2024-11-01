@@ -3,6 +3,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ public class UserPage extends HttpServlet {
     private String list_names_query = "SELECT * FROM messenger WHERE name LIKE ?";
     private DBConnection dbConnection = null;
     private String search_chat_query = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' and table_name like ?";
+    private boolean selected_chat = false;
 
 
     private void getChat(HttpServletRequest request){
@@ -29,12 +31,8 @@ public class UserPage extends HttpServlet {
             while (resultSet.next()){
                 chat = resultSet.getString("table_name").split("_");
                 for(String str: chat){
-                    if(str.equals(name)){
-                        for(String str2: chat){
-                            if(!str2.equals(name)){
-                                chats.add(resultSet.getString("table_name") + "_" + str2);
-                            }
-                        }
+                    if(!str.equals(name)){
+                        chats.add(str);
                     }
                 }
             }
@@ -62,8 +60,9 @@ public class UserPage extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        selected_chat = false;
         String search_for_a_person = request.getParameter("search_for_a_person");
-        if (search_for_a_person == null || search_for_a_person.equals("")) {
+        if ((search_for_a_person == null || search_for_a_person.equals("")) && selected_chat == false) {
             request.setAttribute("empty_name", "Нужно ввести имя!");
         } else {
             try {
@@ -96,6 +95,7 @@ public class UserPage extends HttpServlet {
         }
 
         String selected_user = request.getParameter("selected_user");
+        String chat = request.getParameter("selected_chat");
         if (selected_user != null) {
             HttpSession session1 = request.getSession();
             session1.setAttribute("companion_user", selected_user);
@@ -103,6 +103,16 @@ public class UserPage extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/Chat");
             return;
         }
+
+        if (chat != null) {
+            HttpSession session1 = request.getSession();
+            session1.setAttribute("companion_user", chat);
+            session1.setAttribute("user", name);
+            response.sendRedirect(request.getContextPath() + "/Chat");
+            return;
+        }
+
+
 
         getChat(request);
         request.setAttribute("name", name);
