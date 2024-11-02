@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>buzzor</title>
+    <title><%= request.getAttribute("name") %> | buzzor</title>
 </head>
 
 <body>
@@ -17,7 +17,8 @@
         %>
         <form action="UserPage" method="post">
             <input type="hidden" name="selected_chat" value="<%= chat %>">
-            <button type="submit"><%= chat %></button>
+            <button type="submit"><%= chat %>
+            </button>
         </form>
         <%
                 }
@@ -35,7 +36,8 @@
         </form>
     </div>
 
-    <h2><%= request.getAttribute("name") %></h2>
+    <h2><%= request.getAttribute("name") %>
+    </h2>
 
     <ul>
         <%

@@ -3,9 +3,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>buzzor</title>
+    <title>Вход | buzzor</title>
     <style>
-        /* Global styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #2C2F33;
@@ -19,7 +18,6 @@
             overflow: hidden;
         }
 
-        /* Main container */
         .login-container {
             background-color: #40444B;
             padding: 2rem;
@@ -30,7 +28,6 @@
             z-index: 1;
         }
 
-        /* Heading */
         h1 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
@@ -43,7 +40,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Form styles */
         form {
             display: flex;
             flex-direction: column;
@@ -61,19 +57,18 @@
             padding: 0.6rem;
             width: 100%;
             border-radius: 5px;
-            border: none; /* Убираем белую окантовку */
-            background-color: #2C2F33; /* Цвет фона для полей */
-            color: #FFFFFF; /* Цвет текста в полях */
+            border: none;
+            background-color: #2C2F33;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             font-size: 1rem;
             box-sizing: border-box;
         }
 
-        /* Button styles */
         button[type="submit"] {
             padding: 0.7rem;
             width: 100%;
-            background-color: #5865F2;
+            background-color: #616ac9;
             color: #FFFFFF;
             border: none;
             border-radius: 5px;
@@ -86,7 +81,6 @@
             background-color: #4a5ac4;
         }
 
-        /* Links and error message */
         .signup-link {
             color: #7289DA;
             text-decoration: none;
@@ -103,14 +97,12 @@
             margin: 0.5rem 0;
         }
 
-        /* Powered by style */
         .powered-by {
             font-size: 0.9rem;
             color: #99AAB5;
             margin-top: 1rem;
         }
 
-        /* Background pattern */
         .background-pattern {
             position: absolute;
             width: 100%;
@@ -124,7 +116,6 @@
             opacity: 0.1;
         }
 
-        /* Adding squares with different sizes and positions */
         .shape-1 { width: 100px; height: 100px; background-color: #7289DA; top: 20px; left: 20px; }
         .shape-2 { width: 120px; height: 120px; background-color: #99AAB5; top: 50px; left: 150px; }
         .shape-3 { width: 90px; height: 90px; background-color: #A1C4E3; top: 200px; left: 80px; }

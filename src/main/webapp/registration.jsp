@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>buzzor</title>
+    <title>Регистрация | buzzor</title>
     <style>
         /* Global styles */
         body {
@@ -56,20 +56,20 @@
             font-weight: bold;
             color: #B9BBBE;
             font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-            width: 90%;
+            margin-bottom: 0.2rem;
+            width: 100%;
             text-align: left;
             box-sizing: border-box;
         }
 
         input[type="text"], input[type="password"] {
             padding: 0.6rem;
-            width: 90%;
+            width: 100%;
             border-radius: 5px;
             border: none;
             background-color: #2C2F33;
             color: #FFFFFF;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-size: 1rem;
             box-sizing: border-box;
         }
@@ -168,13 +168,13 @@
     <h2>Регистрация</h2>
 
     <form action="RegistrationPage" method="post">
-        <label for="username">Отображаемое имя:</label>
+        <label for="username">Отображаемое имя</label>
         <input type="text" id="username" name="username" required>
 
-        <label for="login">Логин:</label>
+        <label for="login">Логин</label>
         <input type="text" id="login" name="login" required>
 
-        <label for="password">Пароль:</label>
+        <label for="password">Пароль</label>
         <input type="password" id="password" name="password" required>
 
         <button type="submit" class="submit-button">Зарегистрироваться</button>
