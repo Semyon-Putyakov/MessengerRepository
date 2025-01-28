@@ -13,7 +13,7 @@
 
     <div id="chat-window">
         <%
-            // Код для загрузки сообщений только при первоначальной загрузке страницы
+
             StringBuilder chatMessages = new StringBuilder();
             String tableName = (String) request.getSession().getAttribute("tableName");
             String query = "SELECT * FROM \"" + tableName + "\" ORDER BY timestamp ASC";

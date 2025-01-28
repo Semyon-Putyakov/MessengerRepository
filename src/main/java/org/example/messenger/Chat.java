@@ -131,4 +131,3 @@ public class Chat extends HttpServlet {
         request.getRequestDispatcher("chat.jsp").forward(request, response);
     }
 }
-///// Закрытие ресурсов. Использовать try-with-resources, чтобы автоматически закрывать ресурсы, такие как PreparedStatement и ResultSet, после использования. ?????

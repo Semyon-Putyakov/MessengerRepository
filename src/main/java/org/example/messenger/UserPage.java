@@ -133,3 +133,10 @@ public class UserPage extends HttpServlet {
 //        request.setAttribute("name", name);
 //        RequestDispatcher requestDispatcher = request.getRequestDispatcher("page_user.jsp");
 //        requestDispatcher.forward(request, response);
+
+
+//  HttpSession session = request.getSession(false);
+//        if (session != null) {
+//            session.invalidate(); // Завершаем сессию
+//        }
+//        response.sendRedirect("login.jsp");
